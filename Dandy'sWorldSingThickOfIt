@@ -12,6 +12,8 @@
 local ChatService = game:GetService("TextChatService")
 local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
 
+-------------------------------------------------------------------------------------------------------------------------------
+
 wait(1)
 
 channel:SendAsync("I'm in the thick of it, everybody knows")
