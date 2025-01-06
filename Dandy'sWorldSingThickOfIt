@@ -1,475 +1,218 @@
--------------------------------------------------------------------------------------------------------------------------------
+--[[---------------------------------------------------------------------------------------------------------------------------
+  __   __     ______     __  __     __     ______     __  __     ______    
+ /\ "-.\ \   /\  __ \   /\_\_\_\   /\ \   /\  __ \   /\ \/\ \   /\  ___\   
+ \ \ \-.  \  \ \ \/\ \  \/_/\_\/_  \ \ \  \ \ \/\ \  \ \ \_\ \  \ \___  \  
+  \ \_\\"\_\  \ \_____\   /\_\/\_\  \ \_\  \ \_____\  \ \_____\  \/\_____\ 
+   \/_/ \/_/   \/_____/   \/_/\/_/   \/_/   \/_____/   \/_____/   \/_____/
+   
+   Made by Team Noxious and Plethora -- Thick of It
+   
+---------------------------------------------------------------------------------------------------------------------------]]--
 
--- chorus
-
--------------------------------------------------------------------------------------------------------------------------------
+local ChatService = game:GetService("TextChatService")
+local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
 
 wait(1)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in the thick of it, everybody knows")
-end
+channel:SendAsync("I'm in the thick of it, everybody knows")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
 
-if channel then
-	channel:SendAsync("They know me where it snows, I skied in and they froze")
-end
+channel:SendAsync("They know me where it snows, I skied in and they froze")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
 
-if channel then
-	channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
-end
+channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
 
-if channel then
-	channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
-end
+channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
 
 wait(3.6)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- verse 1.5
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in my prime, and this ain't even final form")
-end
+channel:SendAsync("I'm in my prime, and this ain't even final form")
 
 wait(3.2)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They knocked me down, but still, my feet, they find the floor")
-end
+channel:SendAsync("They knocked me down, but still, my feet, they find the floor")
 
 wait(3.2)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I went from living rooms straight out to sold-out tours")
-end
+channel:SendAsync("I went from living rooms straight out to sold-out tours")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Life's a fight, but trust, I'm ready for the war")
-end
+channel:SendAsync("Life's a fight, but trust, I'm ready for the war")
 
 wait(3.3)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- pre-chorus
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Woah, oh, oh")
-end
+channel:SendAsync("Woah, oh, oh")
 
 wait(3.05)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("This is how the story goes")
-end
+channel:SendAsync("This is how the story goes")
 
 wait(3.6)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Woah, oh, oh")
-end
+channel:SendAsync("Woah, oh, oh")
 
 wait(2.9)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I guess this is how the story goes")
-end
+channel:SendAsync("I guess this is how the story goes")
 
 wait(3.3)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- chorus
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in the thick of it, everybody knows")
-end
+channel:SendAsync("I'm in the thick of it, everybody knows")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They know me where it snows, I skied in and they froze")
-end
+channel:SendAsync("They know me where it snows, I skied in and they froze")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
-end
+channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
-end
+channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
 
 wait(3.3)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- verse 2
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("From the screen to the ring, to the pеn, to the king")
-end
+channel:SendAsync("From the screen to the ring, to the pеn, to the king")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Where's my crown? That's my bling, always drama when I ring")
-end
+channel:SendAsync("Where's my crown? That's my bling, always drama when I ring")
 
 wait(4.1)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("See, I believe that if I see it in my heart")
-end
+channel:SendAsync("See, I believe that if I see it in my heart")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Smash through the ceiling 'cause I'm reaching for the stars")
-end
+channel:SendAsync("Smash through the ceiling 'cause I'm reaching for the stars")
 
 wait(3.7)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- pre-chorus
-
--------------------------------------------------------------------------------------------------------------------------------
-
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Woah, oh, oh")
-end
+channel:SendAsync("Woah, oh, oh")
 
 wait(3.05)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("This is how the story goes")
-end
+channel:SendAsync("This is how the story goes")
 
 wait(3.6)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Woah, oh, oh")
-end
+channel:SendAsync("Woah, oh, oh")
 
 wait(2.9)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I guess this is how the story goes")
-end
+channel:SendAsync("I guess this is how the story goes")
 
 wait(3.3)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- chorus
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in the thick of it, everybody knows")
-end
+channel:SendAsync("I'm in the thick of it, everybody knows")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They know me where it snows, I skied in and they froze")
-end
+channel:SendAsync("They know me where it snows, I skied in and they froze")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
-end
+channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
-end
+channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
 
 wait(3.6)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- verse 3
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Highway to heaven, I'm just cruisin' by my lone'")
-end
+channel:SendAsync("Highway to heaven, I'm just cruisin' by my lone'")
 
 wait(3.2)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They cast me out, left me for dead, them people cold")
-end
+channel:SendAsync("They cast me out, left me for dead, them people cold")
 
 wait(3.2)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("My faith in God, mind in the sun, I'm 'bout to sow (Yeah)")
-end
+channel:SendAsync("My faith in God, mind in the sun, I'm 'bout to sow (Yeah)")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("My life is hard, I took the wheel, I cracked the code (Yeah-yeah, woah-oh-oh)")
-end
+channel:SendAsync("My life is hard, I took the wheel, I cracked the code (Yeah-yeah, woah-oh-oh)")
 
 wait(6)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Ain't nobody gon' save you, man, this life will break you (Yeah, woah-oh-oh)")
-end
+channel:SendAsync("Ain't nobody gon' save you, man, this life will break you (Yeah, woah-oh-oh)")
 
 wait(5.8)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("In the thick of it, this is how the story goes")
-end
+channel:SendAsync("In the thick of it, this is how the story goes")
 
 wait(4.5)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- chorus
-
--------------------------------------------------------------------------------------------------------------------------------
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in the thick of it, everybody knows")
-end
+channel:SendAsync("I'm in the thick of it, everybody knows")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They know me where it snows, I skied in and they froze")
-end
+channel:SendAsync("They know me where it snows, I skied in and they froze")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
-end
+channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
-end
+channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
 
 wait(3.6)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I'm in the thick of it, everybody knows")
-end
+channel:SendAsync("I'm in the thick of it, everybody knows")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("They know me where it snows, I skied in and they froze")
-end
+channel:SendAsync("They know me where it snows, I skied in and they froze")
 
 wait(3.5)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
-end
+channel:SendAsync("I don't know no nothin' 'bout no ice, I'm just cold")
 
 wait(3)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
-end
+channel:SendAsync("Forty somethin' milli' subs or so, I've been told")
 
 wait(3.5)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
--- outro
-
--------------------------------------------------------------------------------------------------------------------------------
-
-
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Wоah, оh, оh")
-end
+channel:SendAsync("Wоah, оh, оh")
 
 wait(3.05)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("This is hоw the stоry goes")
-end
+channel:SendAsync("This is hоw the stоry goes")
 
 wait(3.6)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("Woah, oh, oh")
-end
+channel:SendAsync("Woah, oh, oh")
 
 wait(2.9)
 
-local ChatService = game:GetService("TextChatService")
-local channel = ChatService.TextChannels:FindFirstChild("RBXGeneral")
-
-if channel then
-	channel:SendAsync("I guess this is how the story goes")
-end
+channel:SendAsync("I guess this is how the story goes")
