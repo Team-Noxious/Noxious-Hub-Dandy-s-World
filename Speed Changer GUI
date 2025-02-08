@@ -1,0 +1,446 @@
+--[[---------------------------------------------------------------------------------------------------------------------------
+  __   __     ______     __  __     __     ______     __  __     ______    
+ /\ "-.\ \   /\  __ \   /\_\_\_\   /\ \   /\  __ \   /\ \/\ \   /\  ___\   
+ \ \ \-.  \  \ \ \/\ \  \/_/\_\/_  \ \ \  \ \ \/\ \  \ \ \_\ \  \ \___  \  
+  \ \_\\"\_\  \ \_____\   /\_\/\_\  \ \_\  \ \_____\  \ \_____\  \/\_____\ 
+   \/_/ \/_/   \/_____/   \/_/\/_/   \/_/   \/_____/   \/_____/   \/_____/
+   
+   Made by Team Noxious and Plethora (With additional help from ChatGPT) - Dandy's World Speed Changer GUI
+   
+---------------------------------------------------------------------------------------------------------------------------]]--
+
+wait(0) local noxious = {}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local screenGui = Instance.new("ScreenGui")
+
+if game.PlaceId == 118022198489171 then
+	screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+else
+	screenGui.Parent = game:GetService("CoreGui")
+end
+
+screenGui.ResetOnSpawn = false
+
+noxious["user input service"] = game:GetService("UserInputService")
+noxious["run service"] = game:GetService("RunService")
+noxious["tween service"] = game:GetService("TweenService")
+noxious["http service"] = game:GetService("HttpService")
+noxious["marketplace service"] = game:GetService("MarketplaceService")
+
+noxious["players"] = game:GetService("Players")
+noxious["local player"] = noxious["players"].LocalPlayer
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Parent = screenGui
+toggleButton.Size = UDim2.new(0, 48, 0, 48)
+toggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+toggleButton.BorderSizePixel = 1
+toggleButton.BorderColor3 = Color3.new(1,1,1)
+toggleButton.Image = "rbxassetid://96836767720040"
+
+local function movebutton()
+	local screenWidth = game:GetService("Workspace").CurrentCamera.ViewportSize.X
+	local screenHeight = game:GetService("Workspace").CurrentCamera.ViewportSize.Y
+
+	local buttonWidth = 48
+	local buttonHeight = 48
+	local centerX = (screenWidth - buttonWidth) / 2
+	local topMargin = 20
+	local centerY = topMargin
+
+	toggleButton.Position = UDim2.new(0, centerX, 0, centerY - 150)
+
+	local tweenService = game:GetService("TweenService")
+
+	local offsetY = 150
+	local targetPosition = UDim2.new(0, centerX, 0, centerY - offsetY)
+
+	local tweenInfoUp = TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0)
+
+	local tweenUp = tweenService:Create(toggleButton, tweenInfoUp, {Position = targetPosition})
+
+	local function moveButtonBack()
+		local tweenInfoDown = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+
+		local tweenDown = tweenService:Create(toggleButton, tweenInfoDown, {Position = UDim2.new(0, centerX, 0, centerY)})
+
+		tweenDown:Play()
+	end
+
+	toggleButton.Visible = true
+	tweenUp:Play()
+
+	tweenUp.Completed:Wait()
+	moveButtonBack()
+end
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0.3, 0)
+uiCorner.Parent = toggleButton
+
+local borderFrame = Instance.new("Frame")
+borderFrame.Size = UDim2.new(0, 50, 0, 50)
+borderFrame.Position = UDim2.new(-0.02, 0, -0.02, 0)
+borderFrame.BackgroundColor3 = Color3.new(1,1,1)
+borderFrame.Parent = toggleButton
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0.3, 0)
+uiCorner.Parent = borderFrame
+
+local gradient = Instance.new("UIGradient")
+gradient.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
+	ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
+	ColorSequenceKeypoint.new(1, Color3.new(1, 1, 1))
+}
+gradient.Parent = borderFrame
+
+local UIS = game:GetService('UserInputService')
+local frame = toggleButton
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updatelipbuttoninput(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updatelipbuttoninput(input)
+		end
+	end
+end)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local rotationSpeed = 1
+task.spawn(function()
+	while true do
+		gradient.Rotation = (gradient.Rotation + rotationSpeed) % 360
+		task.wait(0.03)
+	end
+end)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local clicktoggle = Instance.new("Sound")
+clicktoggle.SoundId = "rbxassetid://421058925"
+clicktoggle.Parent = toggleButton
+
+clicktoggle.Volume = 0.3
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local frame = Instance.new("Frame")
+frame.Parent = screenGui
+frame.Size = UDim2.new(0, 564, 0, 193)
+frame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+frame.BackgroundTransparency = 0.2
+frame.BorderSizePixel = 1
+frame.BorderColor3 = Color3.new(1,1,1)
+frame.Visible = false
+frame.Active = true
+
+function centerdraggableframe()
+	local screenWidth = game:GetService("Workspace").CurrentCamera.ViewportSize.X
+	local screenHeight = game:GetService("Workspace").CurrentCamera.ViewportSize.Y
+
+	local frameWidth = 564
+	local frameHeight = 193
+
+	local centerX = (screenWidth - frameWidth) / 2
+	local centerY = (screenHeight - frameHeight) / 2 - 61
+
+	frame.Position = UDim2.new(0, centerX, 0, centerY)
+end
+centerdraggableframe()
+
+function dragdraggableframe()
+	local UIS = game:GetService('UserInputService')
+	local frame = frame
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+
+	local function updatedraggableframeinput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updatedraggableframeinput(input)
+			end
+		end
+	end)
+end
+
+dragdraggableframe()
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local topframe = Instance.new("TextLabel")
+topframe.Parent = frame
+topframe.Text = "Dandy's World Speed Changer GUI"
+topframe.Size = UDim2.new(0, 564, 0, 30)
+topframe.Position = UDim2.new(0, 0, 0, 0)
+topframe.Visible = true
+topframe.BackgroundTransparency = 0
+topframe.TextColor3 = Color3.new(1,1,1)
+topframe.TextSize = 21.6
+topframe.Font = Enum.Font.Nunito
+topframe.TextScaled = false
+topframe.BorderSizePixel = 1
+topframe.BorderColor3 = Color3.fromRGB(255, 255, 255)
+topframe.BackgroundColor3 = Color3.fromRGB(0,0,0)
+topframe.Active = true
+
+local speedindicator = Instance.new("TextLabel")
+speedindicator.Parent = frame
+speedindicator.Text = "Current Speed: Normal"
+speedindicator.Size = UDim2.new(0, 564, 0, 30)
+speedindicator.Position = UDim2.new(0, 0, 0, 30)
+speedindicator.Visible = true
+speedindicator.BackgroundTransparency = 0
+speedindicator.TextColor3 = Color3.new(1,1,1)
+speedindicator.TextSize = 21.6
+speedindicator.Font = Enum.Font.Nunito
+speedindicator.TextScaled = false
+speedindicator.BorderSizePixel = 1
+speedindicator.BorderColor3 = Color3.fromRGB(255, 255, 255)
+speedindicator.BackgroundColor3 = Color3.fromRGB(0,0,0)
+speedindicator.Active = true
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local onestarspeed = Instance.new("TextButton")
+onestarspeed.Parent = frame
+onestarspeed.Font = Enum.Font.Nunito
+onestarspeed.Position = UDim2.new(0, 10, 0, 71)
+onestarspeed.Size = UDim2.new(0, 100, 0, 50)
+onestarspeed.Text = "Max 1 ★"
+onestarspeed.TextScaled = false
+onestarspeed.TextSize = 21.6
+onestarspeed.BackgroundColor3 = Color3.fromRGB(0,0,0)
+onestarspeed.BorderColor3 = Color3.new(1,1,1)
+onestarspeed.BorderSizePixel = 1
+onestarspeed.TextColor3 = Color3.new(1,1,1)
+
+local twostarspeed = Instance.new("TextButton")
+twostarspeed.Parent = frame
+twostarspeed.Position = UDim2.new(0, 121, 0, 71)
+twostarspeed.Size = UDim2.new(0, 100, 0, 50)
+twostarspeed.Text = "Max 2 ★"
+twostarspeed.TextScaled = false
+twostarspeed.TextSize = 21.6
+twostarspeed.Font = Enum.Font.Nunito
+twostarspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+twostarspeed.BorderSizePixel = 1
+twostarspeed.BorderColor3 = Color3.new(1, 1, 1)
+twostarspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local threestarspeed = Instance.new("TextButton")
+threestarspeed.Parent = frame
+threestarspeed.Position = UDim2.new(0, 232, 0, 71)
+threestarspeed.Size = UDim2.new(0, 100, 0, 50)
+threestarspeed.Text = "Max 3 ★"
+threestarspeed.TextScaled = false
+threestarspeed.TextSize = 21.6
+threestarspeed.Font = Enum.Font.Nunito
+threestarspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+threestarspeed.BorderSizePixel = 1
+threestarspeed.BorderColor3 = Color3.new(1, 1, 1)
+threestarspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local fourstarspeed = Instance.new("TextButton")
+fourstarspeed.Parent = frame
+fourstarspeed.Position = UDim2.new(0, 343, 0, 71)
+fourstarspeed.Size = UDim2.new(0, 100, 0, 50)
+fourstarspeed.Text = "Max 4 ★"
+fourstarspeed.TextScaled = false
+fourstarspeed.TextSize = 21.6
+fourstarspeed.Font = Enum.Font.Nunito
+fourstarspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+fourstarspeed.BorderSizePixel = 1
+fourstarspeed.BorderColor3 = Color3.new(1, 1, 1)
+fourstarspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local fivestarspeed = Instance.new("TextButton")
+fivestarspeed.Parent = frame
+fivestarspeed.Position = UDim2.new(0, 454, 0, 71)
+fivestarspeed.Size = UDim2.new(0, 100, 0, 50)
+fivestarspeed.Text = "Max 5 ★"
+fivestarspeed.TextScaled = false
+fivestarspeed.TextSize = 21.6
+fivestarspeed.Font = Enum.Font.Nunito
+fivestarspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+fivestarspeed.BorderSizePixel = 1
+fivestarspeed.BorderColor3 = Color3.new(1, 1, 1)
+fivestarspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local inputcustomspeed = Instance.new("TextButton")
+inputcustomspeed.Parent = frame
+inputcustomspeed.Position = UDim2.new(0, 10, 0, 133)
+inputcustomspeed.Size = UDim2.new(0, 210, 0, 50)
+inputcustomspeed.Text = "Apply Custom Speed"
+inputcustomspeed.TextScaled = false
+inputcustomspeed.TextSize = 21.6
+inputcustomspeed.Font = Enum.Font.Nunito
+inputcustomspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+inputcustomspeed.BorderSizePixel = 1
+inputcustomspeed.BorderColor3 = Color3.new(1, 1, 1)
+inputcustomspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local customspeed = Instance.new("TextBox")
+customspeed.Parent = frame
+customspeed.Position = UDim2.new(0, 232, 0, 133)
+customspeed.Size = UDim2.new(0, 322, 0, 50)
+customspeed.TextScaled = false
+customspeed.TextSize = 21.6
+customspeed.PlaceholderText = "Input Custom (Walk) Speed Value"
+customspeed.Text = ""
+customspeed.ClipsDescendants = true
+customspeed.Font = Enum.Font.Nunito
+customspeed.ClearTextOnFocus = false
+customspeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+customspeed.BorderSizePixel = 1
+customspeed.BorderColor3 = Color3.new(1, 1, 1)
+customspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+local player = game.Players.LocalPlayer
+local humanoid = nil
+local currentSpeed = 0
+local speedLoop = false
+
+-- Function to get the player's humanoid
+local function getHumanoid()
+	local character = player.Character or player.CharacterAdded:Wait()
+	humanoid = character:WaitForChild("Humanoid")
+end
+
+-- Function to update speed and text
+local function updateSpeed(speed, stars)
+	clicktoggle:Play()
+	currentSpeed = speed
+	speedindicator.Text = "Current Speed: " .. (stars ~= "Custom" and "Max " .. stars .. " ★" or "Custom") .. " (" .. speed .. ")"
+
+	if not speedLoop then
+		speedLoop = true
+		while speedLoop do
+			if humanoid then
+				humanoid.WalkSpeed = currentSpeed
+			end
+			task.wait(0) -- Small delay to prevent excessive resource use
+		end
+	end
+end
+
+-- Start monitoring the humanoid when the character loads
+player.CharacterAdded:Connect(getHumanoid)
+
+-- Speed Buttons
+onestarspeed.MouseButton1Click:Connect(function()
+	updateSpeed(20, 1) -- Set WalkSpeed to 20
+end)
+
+twostarspeed.MouseButton1Click:Connect(function()
+	updateSpeed(30, 2) -- Set WalkSpeed to 30
+end)
+
+threestarspeed.MouseButton1Click:Connect(function()
+	updateSpeed(40, 3) -- Set WalkSpeed to 40
+end)
+
+fourstarspeed.MouseButton1Click:Connect(function()
+	updateSpeed(50, 4) -- Set WalkSpeed to 50
+end)
+
+fivestarspeed.MouseButton1Click:Connect(function()
+	updateSpeed(60, 5) -- Set WalkSpeed to 60
+end)
+
+-- Custom Speed Input
+inputcustomspeed.MouseButton1Click:Connect(function()
+	local speed = tonumber(customspeed.Text) -- Convert input to a number
+	if speed and speed > 0 then
+		updateSpeed(speed, "Custom") -- Apply custom speed
+	else
+		speedindicator.Text = "Invalid Speed! Enter a valid number."
+	end
+end)
+
+-- Ensure speed loop starts when character spawns
+getHumanoid()
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+toggleButton.ZIndex = 11
+borderFrame.ZIndex = 10
+
+customspeed.ZIndex = 8
+inputcustomspeed.ZIndex = 8
+fivestarspeed.ZIndex = 8
+fourstarspeed.ZIndex = 8
+threestarspeed.ZIndex = 8
+twostarspeed.ZIndex = 8
+onestarspeed.ZIndex = 8
+
+speedindicator.ZIndex = 8
+topframe.ZIndex = 8
+frame.ZIndex = 7
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+toggleButton.MouseButton1Click:Connect(function()
+	clicktoggle:Play()
+	frame.Visible = not frame.Visible
+end)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+movebutton()
+
+-------------------------------------------------------------------------------------------------------------------------------
